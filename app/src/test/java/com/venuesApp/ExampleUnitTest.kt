@@ -1,4 +1,4 @@
-package com.venues
+package com.venuesApp
 
 import org.junit.Test
 
