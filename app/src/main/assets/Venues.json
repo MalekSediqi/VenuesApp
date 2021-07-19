@@ -1,0 +1,431 @@
+{
+  "meta": {
+    "code": 200,
+    "requestId": "60f4701c67adc2185081c9df"
+  },
+  "response": {
+    "venues": [
+      {
+        "id": "4ad8967ef964a520921221e3",
+        "name": "Station Rotterdam Noord",
+        "location": {
+          "address": "Bergweg 8",
+          "lat": 51.94233703498336,
+          "lng": 4.481945200148037,
+          "labeledLatLngs": [
+            {
+              "label": "display",
+              "lat": 51.94233703498336,
+              "lng": 4.481945200148037
+            }
+          ],
+          "distance": 595,
+          "postalCode": "3036 BA",
+          "cc": "NL",
+          "city": "Rotterdam",
+          "state": "Zuid-Holland",
+          "country": "Nederland",
+          "formattedAddress": [
+            "Bergweg 8",
+            "3036 BA Rotterdam",
+            "Nederland"
+          ]
+        },
+        "categories": [
+          {
+            "id": "4bf58dd8d48988d129951735",
+            "name": "Train Station",
+            "pluralName": "Train Stations",
+            "shortName": "Train Station",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/travel/trainstation_",
+              "suffix": ".png"
+            },
+            "primary": true
+          }
+        ],
+        "referralId": "v-1626632220",
+        "hasPerk": false
+      },
+      {
+        "id": "5dcfbe01832e5200088feb00",
+        "name": "De Wasserij",
+        "location": {
+          "address": "Sint-Agathastraat 54",
+          "lat": 51.938026,
+          "lng": 4.477919,
+          "labeledLatLngs": [
+            {
+              "label": "display",
+              "lat": 51.938026,
+              "lng": 4.477919
+            }
+          ],
+          "distance": 43,
+          "postalCode": "3037 SH",
+          "cc": "NL",
+          "city": "Rotterdam",
+          "state": "Zuid-Holland",
+          "country": "Nederland",
+          "formattedAddress": [
+            "Sint-Agathastraat 54",
+            "3037 SH Rotterdam",
+            "Nederland"
+          ]
+        },
+        "categories": [
+          {
+            "id": "4bf58dd8d48988d174941735",
+            "name": "Coworking Space",
+            "pluralName": "Coworking Spaces",
+            "shortName": "Coworking Space",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/building/office_coworkingspace_",
+              "suffix": ".png"
+            },
+            "primary": true
+          }
+        ],
+        "referralId": "v-1626632220",
+        "hasPerk": false
+      },
+      {
+        "id": "5bd30f9c2b274a002c131b7e",
+        "name": "Wintax Wasserette",
+        "location": {
+          "address": "Benthuizerstraat 34",
+          "lat": 51.93704,
+          "lng": 4.4797773,
+          "labeledLatLngs": [
+            {
+              "label": "display",
+              "lat": 51.93704,
+              "lng": 4.4797773
+            }
+          ],
+          "distance": 152,
+          "postalCode": "3036 CH",
+          "cc": "NL",
+          "neighborhood": "Oude Noorden",
+          "city": "Rotterdam",
+          "state": "Zuid-Holland",
+          "country": "Nederland",
+          "formattedAddress": [
+            "Benthuizerstraat 34",
+            "3036 CH Rotterdam",
+            "Nederland"
+          ]
+        },
+        "categories": [
+          {
+            "id": "4bf58dd8d48988d1fc941735",
+            "name": "Laundry Service",
+            "pluralName": "Laundry Services",
+            "shortName": "Laundry",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/laundry_",
+              "suffix": ".png"
+            },
+            "primary": true
+          }
+        ],
+        "referralId": "v-1626632220",
+        "hasPerk": false
+      },
+      {
+        "id": "4d18b8d96d1037042f2b41bd",
+        "name": "Jumper",
+        "location": {
+          "address": "Bergweg 151",
+          "lat": 51.93713528273473,
+          "lng": 4.477987229019577,
+          "labeledLatLngs": [
+            {
+              "label": "display",
+              "lat": 51.93713528273473,
+              "lng": 4.477987229019577
+            }
+          ],
+          "distance": 58,
+          "postalCode": "3037 EG",
+          "cc": "NL",
+          "city": "Rotterdam",
+          "state": "Zuid-Holland",
+          "country": "Nederland",
+          "formattedAddress": [
+            "Bergweg 151",
+            "3037 EG Rotterdam",
+            "Nederland"
+          ]
+        },
+        "categories": [
+          {
+            "id": "4bf58dd8d48988d100951735",
+            "name": "Pet Store",
+            "pluralName": "Pet Stores",
+            "shortName": "Pet Store",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/pet_store_",
+              "suffix": ".png"
+            },
+            "primary": true
+          }
+        ],
+        "referralId": "v-1626632220",
+        "hasPerk": false
+      },
+      {
+        "id": "4ecbb9265c5cfb26b538efcb",
+        "name": "Antep Pastanesi",
+        "location": {
+          "address": "Bergweg 134",
+          "lat": 51.937142804174506,
+          "lng": 4.478218252184222,
+          "labeledLatLngs": [
+            {
+              "label": "display",
+              "lat": 51.937142804174506,
+              "lng": 4.478218252184222
+            }
+          ],
+          "distance": 63,
+          "postalCode": "3036 BJ",
+          "cc": "NL",
+          "city": "Rotterdam",
+          "state": "Zuid-Holland",
+          "country": "Nederland",
+          "formattedAddress": [
+            "Bergweg 134",
+            "3036 BJ Rotterdam",
+            "Nederland"
+          ]
+        },
+        "categories": [
+          {
+            "id": "4bf58dd8d48988d16a941735",
+            "name": "Bakery",
+            "pluralName": "Bakeries",
+            "shortName": "Bakery",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/food/bakery_",
+              "suffix": ".png"
+            },
+            "primary": true
+          }
+        ],
+        "referralId": "v-1626632220",
+        "hasPerk": false
+      },
+      {
+        "id": "556f021d498ebd209c2d5ccf",
+        "name": "La Cabane de Fabian",
+        "location": {
+          "address": "Bergweg 152A",
+          "lat": 51.93655,
+          "lng": 4.47752,
+          "labeledLatLngs": [
+            {
+              "label": "display",
+              "lat": 51.93655,
+              "lng": 4.47752
+            }
+          ],
+          "distance": 122,
+          "postalCode": "3036 BK",
+          "cc": "NL",
+          "neighborhood": "Liskwartier",
+          "city": "Rotterdam",
+          "state": "Zuid-Holland",
+          "country": "Nederland",
+          "formattedAddress": [
+            "Bergweg 152A",
+            "3036 BK Rotterdam",
+            "Nederland"
+          ]
+        },
+        "categories": [
+          {
+            "id": "4bf58dd8d48988d146941735",
+            "name": "Deli / Bodega",
+            "pluralName": "Delis / Bodegas",
+            "shortName": "Deli / Bodega",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/food/deli_",
+              "suffix": ".png"
+            },
+            "primary": true
+          }
+        ],
+        "referralId": "v-1626632220",
+        "hasPerk": false
+      },
+      {
+        "id": "4c2f4e6309a99c7462cd0a2a",
+        "name": "Dirk van den Broek",
+        "location": {
+          "address": "Bergweg 91",
+          "lat": 51.938662,
+          "lng": 4.4793605,
+          "labeledLatLngs": [
+            {
+              "label": "display",
+              "lat": 51.938662,
+              "lng": 4.4793605
+            }
+          ],
+          "distance": 157,
+          "postalCode": "3037 ED",
+          "cc": "NL",
+          "city": "Rotterdam",
+          "state": "Zuid-Holland",
+          "country": "Nederland",
+          "formattedAddress": [
+            "Bergweg 91",
+            "3037 ED Rotterdam",
+            "Nederland"
+          ]
+        },
+        "categories": [
+          {
+            "id": "52f2ab2ebcbc57f1066b8b46",
+            "name": "Supermarket",
+            "pluralName": "Supermarkets",
+            "shortName": "Supermarket",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/food_grocery_",
+              "suffix": ".png"
+            },
+            "primary": true
+          }
+        ],
+        "referralId": "v-1626632220",
+        "hasPerk": false
+      },
+      {
+        "id": "4b9d084bf964a520e98936e3",
+        "name": "Albert Heijn",
+        "location": {
+          "address": "Benthuizerstraat 54",
+          "lat": 51.93632003279897,
+          "lng": 4.479844987713719,
+          "labeledLatLngs": [
+            {
+              "label": "display",
+              "lat": 51.93632003279897,
+              "lng": 4.479844987713719
+            }
+          ],
+          "distance": 204,
+          "postalCode": "3036 CJ",
+          "cc": "NL",
+          "city": "Rotterdam",
+          "state": "Zuid-Holland",
+          "country": "Nederland",
+          "formattedAddress": [
+            "Benthuizerstraat 54",
+            "3036 CJ Rotterdam",
+            "Nederland"
+          ]
+        },
+        "categories": [
+          {
+            "id": "52f2ab2ebcbc57f1066b8b46",
+            "name": "Supermarket",
+            "pluralName": "Supermarkets",
+            "shortName": "Supermarket",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/food_grocery_",
+              "suffix": ".png"
+            },
+            "primary": true
+          }
+        ],
+        "referralId": "v-1626632220",
+        "hasPerk": false
+      },
+      {
+        "id": "60bcf8ec67a8563fd55b5b77",
+        "name": "Noni",
+        "location": {
+          "lat": 51.93906,
+          "lng": 4.4796453,
+          "labeledLatLngs": [
+            {
+              "label": "display",
+              "lat": 51.93906,
+              "lng": 4.4796453
+            }
+          ],
+          "distance": 203,
+          "postalCode": "3036 BD",
+          "cc": "NL",
+          "city": "Rotterdam",
+          "state": "Zuid-Holland",
+          "country": "Nederland",
+          "formattedAddress": [
+            "3036 BD Rotterdam",
+            "Nederland"
+          ]
+        },
+        "categories": [
+          {
+            "id": "4bf58dd8d48988d142941735",
+            "name": "Asian Restaurant",
+            "pluralName": "Asian Restaurants",
+            "shortName": "Asian",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/food/asian_",
+              "suffix": ".png"
+            },
+            "primary": true
+          }
+        ],
+        "referralId": "v-1626632220",
+        "hasPerk": false
+      },
+      {
+        "id": "5d18dde712f1720023c16733",
+        "name": "Reyhaan Grill & More",
+        "location": {
+          "address": "Berweg 164 A",
+          "lat": 51.935862400944536,
+          "lng": 4.47687640786171,
+          "labeledLatLngs": [
+            {
+              "label": "display",
+              "lat": 51.935862400944536,
+              "lng": 4.47687640786171
+            }
+          ],
+          "distance": 207,
+          "postalCode": "3036 BK",
+          "cc": "NL",
+          "city": "Rotterdam",
+          "state": "Zuid-Holland",
+          "country": "Nederland",
+          "formattedAddress": [
+            "Berweg 164 A",
+            "3036 BK Rotterdam",
+            "Nederland"
+          ]
+        },
+        "categories": [
+          {
+            "id": "52e81612bcbc57f1066b79f7",
+            "name": "Persian Restaurant",
+            "pluralName": "Persian Restaurants",
+            "shortName": "Persian",
+            "icon": {
+              "prefix": "https://ss3.4sqi.net/img/categories_v2/food/middleeastern_",
+              "suffix": ".png"
+            },
+            "primary": true
+          }
+        ],
+        "referralId": "v-1626632220",
+        "hasPerk": false
+      }
+    ],
+    "confident": false
+  }
+}
