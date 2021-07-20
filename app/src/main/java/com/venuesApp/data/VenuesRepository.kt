@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 interface VenuesRepository {
 
     suspend fun saveVenues(venues: List<Venue>)
-    suspend fun getVenues(
+    fun getVenues(
         client_id: String,
         client_secret: String,
         version: String,

@@ -21,7 +21,7 @@ class VenuesRepositoryImpl @Inject constructor(
     }
 
     @InternalCoroutinesApi
-    override suspend fun getVenues(
+    override fun getVenues(
         client_id: String,
         client_secret: String,
         version: String,
@@ -32,7 +32,10 @@ class VenuesRepositoryImpl @Inject constructor(
         return networkBoundResource(
             fetchFromLocal = { venuesDao.getVenues() },
             shouldFetchFromRemote = { false },
-            fetchFromRemote = { venuesAPI.getVenues(client_id,client_secret,version,longLat,radius,limit) },
+            fetchFromRemote = {
+                venuesAPI.getVenues(client_id,client_secret,version,longLat,radius,limit)
+
+            },
             processRemoteResponse = {},
             saveRemoteData = {},
             onFetchFailed = { errorBody, statusCode -> "$errorBody + $statusCode" }
@@ -42,8 +45,8 @@ class VenuesRepositoryImpl @Inject constructor(
                     Resource.loading(null)
                 }
                 Resource.Status.SUCCESS -> {
-                    val quote = it.data
-                    Resource.success(quote)
+                    val venues = it.data
+                    Resource.success(venues)
                 }
                 Resource.Status.ERROR -> {
                     Resource.error(it.message!!, null)

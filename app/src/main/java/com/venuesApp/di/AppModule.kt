@@ -1,6 +1,7 @@
 package com.venuesApp.di
 
 import android.content.Context
+import android.content.SharedPreferences
 import androidx.room.Room
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -27,6 +28,17 @@ object AppModule {
     @Singleton
     @Provides
     fun gson(): Gson = GsonBuilder().create()
+
+    @Singleton
+    @Provides
+    fun provideSharedPreferences(
+        @ApplicationContext context: Context
+    ): SharedPreferences {
+        return context.getSharedPreferences(
+            "VenuesApp_SharedPref",
+            Context.MODE_PRIVATE
+        )
+    }
 
     @Singleton
     @Provides
