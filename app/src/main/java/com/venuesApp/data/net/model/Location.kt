@@ -5,6 +5,7 @@ data class Location(
     val cc: String,
     val city: String,
     val country: String,
+    val crossStreet: String,
     val distance: Int,
     val formattedAddress: List<String>,
     val labeledLatLngs: List<LabeledLatLng>,
