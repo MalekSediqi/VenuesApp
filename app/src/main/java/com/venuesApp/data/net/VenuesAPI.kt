@@ -1,5 +1,6 @@
 package com.venuesApp.data.net
 
+import com.venuesApp.data.net.model.Venues
 import com.venuesApp.utils.ApiResponse
 import kotlinx.coroutines.flow.Flow
 import retrofit2.http.GET
@@ -22,6 +23,6 @@ interface VenuesAPI {
         @Query("client_id") client_id: String,
         @Query("client_secret") client_secret:String,
         @Query("v") version:String
-    ) : Flow<ApiResponse<>>
+    )
 
 }
