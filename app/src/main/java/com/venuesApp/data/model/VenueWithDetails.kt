@@ -15,10 +15,10 @@ data class VenueWithDetails(
     @SerializedName("name")
     val name: String,
     @SerializedName("description")
-    val description: String,
+    val description: String? = "",
     @Embedded(prefix = "contact_")
     @SerializedName("contact")
-    val contact: Contact,
+    val contact: Contact? = null,
     @Embedded(prefix = "location_")
     @SerializedName("location")
     val location: Location,

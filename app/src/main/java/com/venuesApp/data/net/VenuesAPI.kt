@@ -1,5 +1,6 @@
 package com.venuesApp.data.net
 
+import com.venuesApp.data.model.VenueDetails
 import com.venuesApp.data.model.VenueWithDetails
 import com.venuesApp.data.model.Venues
 import retrofit2.http.GET
@@ -24,6 +25,6 @@ interface VenuesAPI {
         @Query("client_id") client_id: String,
         @Query("client_secret") client_secret: String,
         @Query("v") version: String
-    ): VenueWithDetails
+    ): VenueDetails
 
 }

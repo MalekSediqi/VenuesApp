@@ -36,7 +36,25 @@ class VenueDetailsFragment : Fragment() {
                 when (it.status) {
                     Resource.Status.SUCCESS -> {
                         binding.venueDetailsTitle.text = it.data?.name
-                        binding.venueDetailsDesc.text = it.data?.description
+                        if (it.data?.description.isNullOrBlank()) {
+                            binding.venueDetailsDesc.visibility = View.GONE
+                        }else {
+                            binding.venueDetailsDesc.visibility = View.VISIBLE
+                            binding.venueDetailsDesc.text = it.data?.description
+                        }
+
+                        if (it.data?.contact != null) {
+                            binding.venueContacts.root.visibility = View.VISIBLE
+                            binding.venueContacts.formattedPhone.text = it.data.contact.formattedPhone
+                            binding.venueContacts.facebookUsername.text = it.data.contact.facebookUsername
+                            binding.venueContacts.instagram.text = it.data.contact.instagram
+                            binding.venueContacts.twitter.text = it.data.contact.twitter
+                        }else {
+                            binding.venueContacts.root.visibility = View.GONE
+                        }
+                        if (it.data?.location != null) {
+
+                        }
                     }
                     Resource.Status.LOADING -> {
 
