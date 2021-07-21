@@ -1,5 +1,6 @@
 package com.venuesApp.data
 
+import androidx.lifecycle.LiveData
 import com.venuesApp.data.model.Venue
 import com.venuesApp.utils.Resource
 import kotlinx.coroutines.flow.Flow
@@ -15,4 +16,5 @@ interface VenuesRepository {
         limit: Int
     ) : Flow<Resource<List<Venue>>>
 
+    fun searchVenuesByTitle(title:String) : LiveData<List<Venue>?>
 }

@@ -2,10 +2,14 @@
     <string name="app_name">VenuesApp</string>
     <string name="title_activity_main">VenuesApp</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">Venues</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="venues_fragment_label">Venues</string>
+    <string name="venues_details_fragment_label">Venues Details</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-    <string name="venue_name_label">name:  </string>
-    <string name="venue_location_label">Location:  </string>
+    <string name="venue_name_label">name:</string>
+    <string name="venue_location_label">Location:</string>
+    <string name="venue_phone_label">Phone:</string>
+    <string name="venue_facebookUsername_label">FacebookUsername:</string>
+    <string name="venue_instagram_label">Instagram:</string>
+    <string name="venue_twitter_label">Twitter:</string>
 </resources>

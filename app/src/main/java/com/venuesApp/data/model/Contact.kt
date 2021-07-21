@@ -5,17 +5,17 @@ import com.google.gson.annotations.SerializedName
 
 data class Contact(
     @SerializedName("facebook")
-    val facebook: String,
+    val facebook: String? = "",
     @SerializedName("facebookName")
-    val facebookName: String,
+    val facebookName: String? = "",
     @SerializedName("facebookUsername")
-    val facebookUsername: String,
+    val facebookUsername: String? = "",
     @SerializedName("formattedPhone")
-    val formattedPhone: String,
+    val formattedPhone: String? = "",
     @SerializedName("instagram")
-    val instagram: String,
+    val instagram: String? = "",
     @SerializedName("phone")
-    val phone: String,
+    val phone: String? = "",
     @SerializedName("twitter")
-    val twitter: String
+    val twitter: String? = ""
 )

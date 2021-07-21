@@ -3,11 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/VenuesFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
+        android:id="@+id/VenuesFragment"
         android:name="com.venuesApp.view.fragments.VenuesFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_venues"/>
+        android:label="@string/venues_fragment_label"
+        tools:layout="@layout/fragment_venues">
+        <action
+            android:id="@+id/action_VenuesFragment_to_venueDetailsFragment"
+            app:destination="@id/venueDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/venueDetailsFragment"
+        android:name="com.venuesApp.view.fragments.VenueDetailsFragment"
+        android:label="fragment_venue_details"
+        tools:layout="@layout/fragment_venue_details" >
+        <action
+            android:id="@+id/action_venueDetailsFragment_to_VenuesFragment"
+            app:destination="@id/VenuesFragment" />
+    </fragment>
 </navigation>

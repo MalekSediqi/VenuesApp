@@ -1,5 +1,6 @@
 package com.venuesApp.data.db
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -15,5 +16,8 @@ interface VenuesDao {
 
     @Query("select * from Venue order by title")
     fun getVenues(): Flow<List<Venue>>
+
+    @Query("select * from Venue Where title LIKE '%' || :title || '%'order by title")
+    fun getVenueByTitle(title:String) : LiveData<List<Venue>?>
 
 }

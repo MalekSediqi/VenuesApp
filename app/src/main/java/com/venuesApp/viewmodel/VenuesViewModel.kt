@@ -2,10 +2,7 @@ package com.venuesApp.viewmodel
 
 import android.content.SharedPreferences
 import androidx.core.content.edit
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.venuesApp.data.VenuesRepository
 import com.venuesApp.data.model.Venue
 import com.venuesApp.utils.Resource
@@ -19,10 +16,9 @@ class VenuesViewModel @Inject constructor(
     private val venuesRepository: VenuesRepository,
     sharedPreferences: SharedPreferences
 ) : ViewModel() {
-    companion object {
-       val clientId:String = "client_id"
 
-    }
+    private val _networkCheck: MutableLiveData<Boolean> = MutableLiveData()
+    var selectedVenue:Venue? = null
 
     init {
         if (!sharedPreferences.contains(SharedPreferenceKeys.ClientId.name)) {
@@ -58,4 +54,15 @@ class VenuesViewModel @Inject constructor(
         }
     }.asLiveData(viewModelScope.coroutineContext)
 
+    fun setNetworkStatus(status: Boolean) {
+        _networkCheck.value = status
+    }
+
+    fun getNetworkStatus(): LiveData<Boolean> {
+        return _networkCheck
+    }
+
+    fun getVenuesByTitle(venuesByTitle:String) : LiveData<List<Venue>?> {
+        return venuesRepository.searchVenuesByTitle(venuesByTitle)
+    }
 }

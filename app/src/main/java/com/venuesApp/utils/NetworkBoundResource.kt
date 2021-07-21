@@ -1,6 +1,7 @@
 package com.currencyConverterApp.utils
 
 import com.venuesApp.utils.Resource
+import com.venuesApp.utils.networkStatus
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.channelFlow
@@ -12,7 +13,7 @@ inline fun <ResultType, RequestType> networkBoundResource(
     crossinline query: () -> Flow<ResultType>,
     crossinline fetch: suspend () -> RequestType,
     crossinline saveFetchResult: suspend (RequestType) -> Unit,
-    crossinline shouldFetch: (ResultType) -> Boolean = { true }
+    crossinline shouldFetch: (ResultType) -> Boolean = { networkStatus }
 ) = channelFlow {
     val data = query().first()
     if (shouldFetch(data)) {
