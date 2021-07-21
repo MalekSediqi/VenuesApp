@@ -16,10 +16,6 @@ class VenuesRepositoryImpl @Inject constructor(
     private val venuesAPI: VenuesAPI,
     private val venuesDao: VenuesDao) : VenuesRepository {
 
-    override suspend fun saveVenues(venues: List<Venue>) {
-        venuesDao.insertVenues(venues)
-    }
-
     @InternalCoroutinesApi
     override fun getVenues(
         client_id: String,
@@ -36,8 +32,9 @@ class VenuesRepositoryImpl @Inject constructor(
                 venuesAPI.getVenues(client_id,client_secret,version,longLat,radius,limit)
 
             },
-            processRemoteResponse = {},
-            saveRemoteData = {},
+            saveRemoteData = {
+                    venuesDao.insertVenues(it)
+            },
             onFetchFailed = { errorBody, statusCode -> "$errorBody + $statusCode" }
         ).map {
             when (it.status) {

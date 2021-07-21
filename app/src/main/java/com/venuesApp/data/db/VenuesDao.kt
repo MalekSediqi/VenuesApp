@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 interface VenuesDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertVenues(venues: List<Venue>)
+    fun insertVenues(venues: List<Venue>)
 
     @Query("select * from Venue order by title")
     fun getVenues(): Flow<List<Venue>>

@@ -6,7 +6,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface VenuesRepository {
 
-    suspend fun saveVenues(venues: List<Venue>)
     fun getVenues(
         client_id: String,
         client_secret: String,
@@ -15,9 +14,5 @@ interface VenuesRepository {
         radius: Int,
         limit: Int
     ) : Flow<Resource<List<Venue>>>
-
-
-
-
 
 }

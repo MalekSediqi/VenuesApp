@@ -8,7 +8,6 @@ inline fun <DB, REMOTE> networkBoundResource(
     crossinline fetchFromLocal: () -> Flow<DB>,
     crossinline shouldFetchFromRemote: (DB?) -> Boolean = { true },
     crossinline fetchFromRemote: () -> Flow<ApiResponse<REMOTE>>,
-    crossinline processRemoteResponse: (response: ApiSuccessResponse<REMOTE>) -> Unit = { },
     crossinline saveRemoteData: (REMOTE) -> Unit = { },
     crossinline onFetchFailed: (errorBody: String?, statusCode: Int) -> Unit = { _: String?, _: Int -> }
 ) = flow<Resource<DB>> {
@@ -24,7 +23,6 @@ inline fun <DB, REMOTE> networkBoundResource(
         fetchFromRemote().collect { apiResponse ->
             when (apiResponse) {
                 is ApiSuccessResponse -> {
-                    processRemoteResponse(apiResponse)
                     apiResponse.body?.let { saveRemoteData(it) }
                     emitAll(fetchFromLocal().map { dbData ->
                         Resource.success(dbData)
