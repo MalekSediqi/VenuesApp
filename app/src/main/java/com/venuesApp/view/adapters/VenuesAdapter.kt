@@ -21,7 +21,12 @@ class VenuesAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        VenuesViewHolder(holder.itemView).apply {
+            val venue = venues[position]
+            tvTitle.text = venue.title
+            tvLocation.text = venue.location.address
+
+        }
     }
 
     fun setVenues(_venues: List<Venue>) {

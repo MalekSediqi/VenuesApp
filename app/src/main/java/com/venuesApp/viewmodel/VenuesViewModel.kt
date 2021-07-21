@@ -25,19 +25,19 @@ class VenuesViewModel @Inject constructor(
     }
 
     init {
-        if (!sharedPreferences.contains("client_id")) {
+        if (!sharedPreferences.contains(SharedPreferenceKeys.ClientId.name)) {
             sharedPreferences.edit {
-                this.putString("client_id", "EK2XFUL55GKQKPXK3XTTO3AKL1SAND1VFYJHD0CQQGN3YB3H")
-                this.putString("client_secret", "5BJWV2L3OB0MDBZIRP1MRC420FA0M1ILJOPOWUFNI02BEQQ2")
-                this.putString("v", "20210720")
-                this.putString("longLat", "51.9244,4.4777")
-                this.putInt("radius", 1000)
-                this.putInt("limit", 10)
+                this.putString(SharedPreferenceKeys.ClientId.name, "EK2XFUL55GKQKPXK3XTTO3AKL1SAND1VFYJHD0CQQGN3YB3H")
+                this.putString(SharedPreferenceKeys.ClientSecret.name, "5BJWV2L3OB0MDBZIRP1MRC420FA0M1ILJOPOWUFNI02BEQQ2")
+                this.putString(SharedPreferenceKeys.Version.name, "20210720")
+                this.putString(SharedPreferenceKeys.LongLat.name, "51.9244,4.4777")
+                this.putInt(SharedPreferenceKeys.Radius.name, 1000)
+                this.putInt(SharedPreferenceKeys.Limit.name, 10)
             }
         }
     }
 
-    val _venues: LiveData<Resource<List<Venue>>> = venuesRepository.getVenues(
+     val _venues: LiveData<Resource<List<Venue>>> = venuesRepository.getVenues(
         sharedPreferences.getString(SharedPreferenceKeys.ClientId.name, "") ?: "",
         sharedPreferences.getString(SharedPreferenceKeys.ClientSecret.name, "") ?: "",
         sharedPreferences.getString(SharedPreferenceKeys.Version.name, "") ?: "",

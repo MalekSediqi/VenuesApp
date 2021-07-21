@@ -1,20 +1,18 @@
 package com.venuesApp.data.model
 
-
 import com.google.gson.annotations.SerializedName
-
 
 data class Location(
     @SerializedName("address")
-    val address: String?,
+    val address: String? = "",
     @SerializedName("city")
-    val city: String,
+    val city: String? = "",
     @SerializedName("country")
-    val country: String,
+    val country: String? = "",
     @SerializedName("crossStreet")
-    val crossStreet: String,
+    val crossStreet: String? = "",
     @SerializedName("postalCode")
-    val postalCode: String,
+    val postalCode: String? = "",
     @SerializedName("state")
-    val state: String
+    val state: String? = ""
 )

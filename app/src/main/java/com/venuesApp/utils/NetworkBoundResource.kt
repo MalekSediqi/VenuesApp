@@ -1,52 +1,35 @@
-package com.venuesApp.utils
+package com.currencyConverterApp.utils
 
-import kotlinx.coroutines.InternalCoroutinesApi
-import kotlinx.coroutines.flow.*
+import com.venuesApp.utils.Resource
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.channelFlow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 
-@InternalCoroutinesApi
-inline fun <DB, REMOTE> networkBoundResource(
-    crossinline fetchFromLocal: () -> Flow<DB>,
-    crossinline shouldFetchFromRemote: (DB?) -> Boolean = { true },
-    crossinline fetchFromRemote: () -> Flow<ApiResponse<REMOTE>>,
-    crossinline processRemoteResponse: (response: ApiSuccessResponse<REMOTE>) -> Unit = { },
-    crossinline saveRemoteData: (REMOTE) -> Unit = { },
-    crossinline onFetchFailed: (errorBody: String?, statusCode: Int) -> Unit = { _: String?, _: Int -> }
-) = flow<Resource<DB>> {
+inline fun <ResultType, RequestType> networkBoundResource(
+    crossinline query: () -> Flow<ResultType>,
+    crossinline fetch: suspend () -> RequestType,
+    crossinline saveFetchResult: suspend (RequestType) -> Unit,
+    crossinline shouldFetch: (ResultType) -> Boolean = { true }
+) = channelFlow {
+    val data = query().first()
+    if (shouldFetch(data)) {
+        val loading = launch {
+            query().collect { send(Resource.loading(it)) }
+        }
 
-    emit(Resource.loading(null))
-
-    val localData = fetchFromLocal().first()
-
-    if (shouldFetchFromRemote(localData)) {
-
-        emit(Resource.loading(localData))
-
-        fetchFromRemote().collect { apiResponse ->
-            when (apiResponse) {
-                is ApiSuccessResponse -> {
-                    processRemoteResponse(apiResponse)
-                    apiResponse.body?.let { saveRemoteData(it) }
-                    emitAll(fetchFromLocal().map { dbData ->
-                        Resource.success(dbData)
-                    })
-                }
-                is ApiErrorResponse -> {
-                    onFetchFailed(apiResponse.errorMessage, apiResponse.statusCode)
-                    emitAll(fetchFromLocal().map {
-                        Resource.error(
-                            apiResponse.errorMessage,
-                            it
-                        )
-                    })
-                }
-                is ApiEmptyResponse -> {
-                    emitAll(fetchFromLocal().map { dbData ->
-                        Resource.success(dbData)
-                    })
-                }
-            }
+        try {
+            delay(2000)
+            saveFetchResult(fetch())
+            loading.cancel()
+            query().collect { send(Resource.success(it)) }
+        } catch (t: Throwable) {
+            loading.cancel()
+            query().collect { send(Resource.error(t.message.toString(), null)) }
         }
     } else {
-        emitAll(fetchFromLocal().map { Resource.success(it) })
+        query().collect { send(Resource.success(it)) }
     }
 }
