@@ -37,7 +37,7 @@ class VenuesViewModel @Inject constructor(
         }
     }
 
-    private val _venues: LiveData<Resource<List<Venue>>> = venuesRepository.getVenues(
+    val _venues: LiveData<Resource<List<Venue>>> = venuesRepository.getVenues(
         sharedPreferences.getString(SharedPreferenceKeys.ClientId.name, "") ?: "",
         sharedPreferences.getString(SharedPreferenceKeys.ClientSecret.name, "") ?: "",
         sharedPreferences.getString(SharedPreferenceKeys.Version.name, "") ?: "",
