@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import com.currencyConverterApp.utils.networkBoundResource
 import com.venuesApp.data.db.VenuesDao
 import com.venuesApp.data.model.Venue
+import com.venuesApp.data.model.VenueWithDetails
 import com.venuesApp.data.net.VenuesAPI
 import com.venuesApp.utils.Resource
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -34,5 +35,20 @@ class VenuesRepositoryImpl @Inject constructor(
 
     override fun searchVenuesByTitle(title: String): LiveData<List<Venue>?> {
         return venuesDao.getVenueByTitle(title)
+    }
+
+    override fun getVenueWithDetails(
+        venueId:String,
+        client_id: String,
+        client_secret: String,
+        version: String
+    ): Flow<Resource<VenueWithDetails>> {
+        return networkBoundResource(
+            query = { venuesDao.getVenueDetails(venueId) },
+            fetch = { venuesAPI.getVenuesDetails(venueId,client_id,client_secret,version) },
+            saveFetchResult = {
+                venuesDao.insertVenueDetails(it)
+            }
+        )
     }
 }

@@ -30,7 +30,7 @@ class VenuesFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var searchVenueByTitle: SearchView
     private val venuesAdapter: VenuesAdapter = VenuesAdapter(mutableListOf()) {
-        venuesViewModel.selectedVenue = it
+        venuesViewModel.selectVenue(it)
     }
 
     private lateinit var recyclerView: RecyclerView

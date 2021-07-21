@@ -12,4 +12,6 @@
     <string name="venue_facebookUsername_label">FacebookUsername:</string>
     <string name="venue_instagram_label">Instagram:</string>
     <string name="venue_twitter_label">Twitter:</string>
+    <string name="venue_details_title">Title: </string>
+    <string name="venue_details_desc">Description: </string>
 </resources>
