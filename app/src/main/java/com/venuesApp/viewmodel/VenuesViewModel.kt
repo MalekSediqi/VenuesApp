@@ -61,7 +61,7 @@ class VenuesViewModel @Inject constructor(
                 Resource.success(it.data)
             }
             Resource.Status.ERROR -> {
-                Resource.error(it.message!!, null)
+                Resource.error(it.message ?: "Error", null)
             }
         }
     }.asLiveData(viewModelScope.coroutineContext)
